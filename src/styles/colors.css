@@ -1,9 +1,9 @@
 :root {
   --color-primary: #8c755c;
-  --color-text: #333;
+  --color-text: #000;
 
-  --color-light-background: #f9f5ee;
-  --color-dark-background: #333;
+  --color-light-background: #ff3776;
+  --color-dark-background: #000;
 
   --color-border: #e0d9ce;
   --color-shadow: #0000001A;
