@@ -1,8 +1,15 @@
 @import url('colors.css');
 
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('./src/fonts/NanumSquareRoundB.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'NanumSquareRound', Arial, sans-serif;
   color: var(--color-text);
   overflow-x: hidden;
 }
@@ -45,7 +52,7 @@ header p {
 }
 
 section {
-  padding: 5% 10%;
+  padding: 10% 10%;
   margin: 0;
   box-sizing: border-box;
   opacity: 0;

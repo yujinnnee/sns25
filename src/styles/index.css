@@ -135,6 +135,84 @@
   display: inline;
 }
 
+.container9 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  background: #fff;
+  color: #000;
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+.container9 .marketing-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+}
+
+.container9 .card {
+  background: #f9f9f9;
+  border: 2px solid #ff3776;
+  border-radius: 12px;
+  text-align: center;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.container9 .card:hover {
+  background: #ff3776;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.container9 .card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.container9 .card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.container9 .card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.container9 .card:hover p {
+  color: #fff;
+}
+
+/* 오른쪽 텍스트 구역 */
+.container9 .marketing-right {
+  flex: 1;
+  display: flex;          /* flex 컨테이너로 만들어야 align-items 적용됨 */
+  flex-direction: column; /* 세로로 정렬 */
+  justify-content: center;/* 세로 중앙정렬 */
+}
+
+.container9 .text-block {
+}
+
+.container9 .text-block h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.container9 .text-block p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
 /* 모바일 대응 */
 @media (max-width: 767px) {
   .container1 .content-container {
@@ -189,5 +267,36 @@
   .container7 h2 {
   }
 
+  .container9 .marketing-left {
+    grid-template-columns: 1fr; /* 모바일에서는 1열 */
+  }
+
+  .container9 {
+    padding: 40px 20px;
+  }
+
+  .container9 .card {
+    padding: 20px;
+  }
+
+  .container9 .text-block h4 {
+    font-size: 18px;
+  }
+
+  .container9 .text-block p {
+    font-size: 14px;
+  }
   
 }
+
+@media (max-width: 1023px) {
+  .container9 {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .container9 .marketing-left {
+    grid-template-columns: 1fr 1fr; /* 태블릿에서는 2열 유지 */
+  }
+}
+
