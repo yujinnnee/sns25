@@ -14,20 +14,20 @@ body {
   overflow-x: hidden;
 }
 
-header {
+/* header {
   position: relative;
   width: 100%;
-  display: flex;               /* flex 박스 활성화 */
-  flex-direction: column;      /* 세로 방향 정렬 */
-  align-items: center;         /* 가로 가운데 */
+  display: flex;             
+  flex-direction: column;    
+  align-items: center;         
   padding: 0;
   box-sizing: border-box;
-  text-align: center;          /* 안에 텍스트들도 가운데 정렬 */
+  text-align: center;       
 }
 
 .header-img {
   width: 100%;
-  height: auto;   /* 비율 유지하면서 크기 맞추기 */
+  height: auto;  
   object-fit: cover;
   padding: 0;
   display: block;
@@ -41,14 +41,123 @@ header h1 {
   margin: 0;
   padding: 3% 0 0 0;
   width: 100%;
-  border: none;           /* 혹시 border가 있었다면 제거 */
-  text-decoration: none;  /* 밑줄 제거 */
+  border: none;          
+  text-decoration: none; 
 }
 
 header p {
   color: #fff;
   font-size: 1.3rem;
   text-align: center;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #fbe8ee; 
+  top: 0;
+  z-index: 1000;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 20px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  width: 350px;   /* 조금 줄임 */
+  height: 350px;
+  background: #ff3776;
+  opacity: 0.15;
+  border-radius: 40% 60% 70% 30% / 40% 30% 70% 60%;
+  animation: blob 18s infinite linear;
+}
+
+/* 왼쪽 위 */
+.blob:nth-child(1) {
+  top: -80px;   /* 기존 -100px → 조금 내려서 자연스럽게 */
+  left: -50px;  /* 화면 안쪽으로 */
+  background: #ff6b9d;
+  animation-duration: 25s;
+}
+
+/* 오른쪽 중간 */
+.blob:nth-child(2) {
+  top: 50px;   /* 기존 200px → 위로 올림 */
+  right: -100px; 
+  background: #ff3776;
+  animation-duration: 30s;
+}
+
+/* 중앙 아래 */
+.blob:nth-child(3) {
+  bottom: 0px;  /* 기존 -150px → 덜 잘리게 */
+  left: 40%;      /* 조금 오른쪽으로 */
+  background: #ff9fbd;
+  animation-duration: 35s;
+}
+
+
+@keyframes blob {
+  0% {
+    transform: scale(1) translate(0,0) rotate(0deg);
+  }
+  33% {
+    transform: scale(1.2) translate(50px, -30px) rotate(45deg);
+  }
+  66% {
+    transform: scale(0.9) translate(-40px, 20px) rotate(90deg);
+  }
+  100% {
+    transform: scale(1) translate(0,0) rotate(0deg);
+  }
+}
+
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ff3776;
+  margin-bottom: 3%;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #000;
+  line-height: 1.6;
+  margin-bottom: 3%;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff3776, #ff6b9d);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: linear-gradient(135deg, #e62f68, #ff3776);
 }
 
 section {
@@ -78,11 +187,13 @@ footer {
 h1 {
   font-size: 2.3rem;
   margin-top: 0;
+  margin-bottom: 30px;
 }
 
 h2 {
   font-size: 2.3rem;
   margin-top: 0;
+  margin-bottom: 30px;
 }
 
 h3 {
@@ -142,7 +253,6 @@ a {
   gap: 10%;
   max-width: 1000px;
   align-items: center;
-  margin-top: 5%;
 }
 
 .container1 .text-container {
@@ -428,3 +538,57 @@ a {
   }
 }
 
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-icons span {
+  position: absolute;
+  display: block;
+  color: rgba(255, 55, 118, 0.2); /* 연핑크 느낌 */
+  font-size: 2.5rem;
+  animation: float 12s linear infinite;
+}
+
+.floating-icons span:nth-child(1) {
+  left: 10%;
+  animation-duration: 10s;
+  font-size: 3rem;
+}
+.floating-icons span:nth-child(2) {
+  left: 30%;
+  animation-duration: 14s;
+  font-size: 2rem;
+}
+.floating-icons span:nth-child(3) {
+  left: 60%;
+  animation-duration: 12s;
+  font-size: 2.8rem;
+}
+.floating-icons span:nth-child(4) {
+  left: 80%;
+  animation-duration: 16s;
+  font-size: 2.2rem;
+}
+
+@keyframes float {
+  0% {
+    top: 100%;
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
