@@ -422,29 +422,13 @@ a {
   color: #333;
 }
 
-.divider {
-  display: inline;
-}
-
-.container9 .card .icon img {
-  width: 50px;   /* 아이콘 크기 */
-  height: 50px;
-  object-fit: contain; /* 이미지 비율 유지 */
-}
 
 /* 모바일 대응 */
 @media (max-width: 767px) {
-  .divider {
-    display: none; /* 모바일에서 | 숨김 */
-  }
-
   .container1 .content-container {
     flex-direction: column;
     gap: 20px;
-  }
-
-  .container1 h1 {
-    margin-bottom: 0;
+    margin-top: 3%;
   }
 
   .container1 .text-container,
@@ -453,12 +437,7 @@ a {
   }
 
   .container1 .text-container p {
-    margin-bottom: 10px;
-  }
-
-  .container4 p {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 15px;
   }
 
   .loan-list li {
@@ -499,10 +478,11 @@ a {
   }
 
   .container9 .marketing-left {
-    width: 100%;
+    grid-template-columns: 1fr; /* 모바일에서는 1열 */
   }
 
   .container9 {
+    padding: 40px 20px;
   }
 
   .container9 .card {
