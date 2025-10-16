@@ -515,7 +515,6 @@ a {
     display: block;
   }
 
-    /* 헤더 */
   .header {
     padding: 15px 20px;
     flex-direction: column;
@@ -523,7 +522,6 @@ a {
     text-align: center;
   }
 
-  /* 히어로 */
   .hero {
     padding: 80px 15px;
   }
@@ -548,12 +546,15 @@ a {
     margin-bottom: 15px;
   }
 
-  /* blob 크기 줄이기 */
   .blob {
     width: 200px;
     height: 200px;
   }
 
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* 절대적으로 좌우 스크롤 제거 */
+  }
   /* 본문 공통 */
   h1, h2 {
     font-size: 1.8rem;
