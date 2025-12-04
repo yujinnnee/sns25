@@ -587,3 +587,30 @@ a {
     grid-template-columns: 1fr 1fr; /* 태블릿에서는 2열 유지 */
   }
 }
+
+.container20 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+/* 기본: PC에서 원본 크기 유지 */
+.container20 img {
+  width: auto;       /* 원본 너비 유지 */
+  max-width: none;   /* 확대/축소 제한 없음 */
+  height: auto;
+  display: block;
+}
+
+/* 모바일(480px 이하): 반응형 + 여백 */
+@media (max-width: 480px) {
+  .container20 {
+    padding: 0 16px; /* 모바일 양쪽 여백 */
+  }
+
+  .container20 img {
+    width: 100%;      /* 화면에 맞게 줄어듦 */
+    max-width: 100%;  /* 부모 범위 넘기지 않음 */
+  }
+}
